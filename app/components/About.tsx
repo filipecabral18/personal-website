@@ -1,26 +1,26 @@
-'use client'
+'use client';
 
-import Image from 'next/image'
-import { useEffect, useRef } from 'react'
+import Image from 'next/image';
+import { useEffect, useRef } from 'react';
 
 export default function About() {
-  const sectionRef = useRef<HTMLElement>(null)
+  const sectionRef = useRef<HTMLElement>(null);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
-            entry.target.classList.add('visible')
+            entry.target.classList.add('visible');
           }
-        })
+        });
       },
       { threshold: 0.15 },
-    )
-    const els = sectionRef.current?.querySelectorAll('.fade-in-section')
-    els?.forEach((el) => observer.observe(el))
-    return () => observer.disconnect()
-  }, [])
+    );
+    const els = sectionRef.current?.querySelectorAll('.fade-in-section');
+    els?.forEach((el) => observer.observe(el));
+    return () => observer.disconnect();
+  }, []);
 
   return (
     <section
@@ -32,7 +32,9 @@ export default function About() {
         {/* Section label */}
         <div className="fade-in-section flex items-center gap-3 mb-16">
           <span className="font-mono text-blue-400 text-sm">01.</span>
-          <h2 className="text-2xl md:text-3xl font-bold text-white">Sobre mim</h2>
+          <h2 className="text-2xl md:text-3xl font-bold text-white">
+            Sobre mim
+          </h2>
           <div className="flex-1 h-px bg-gradient-to-r from-blue-500/40 to-transparent ml-2" />
         </div>
 
@@ -40,18 +42,21 @@ export default function About() {
           {/* Text */}
           <div className="fade-in-section space-y-5">
             <p className="text-slate-300 leading-relaxed text-base">
-              Olá! Sou <strong className="text-white">Carlos Filipe</strong>, um Software Engineer
-              baseado em Aracaju, Brasil. Trabalho com desenvolvimento full stack, com foco especial
-              em arquitetura backend e sistemas escaláveis.
+              Olá! Sou <strong className="text-white">Carlos Filipe</strong>, um
+              Software Engineer baseado em Aracaju, Brasil. Trabalho com
+              desenvolvimento full stack, com foco especial em sistemas
+              escaláveis.
             </p>
             <p className="text-slate-400 leading-relaxed text-base">
-              Atualmente atuo na área de tecnologia em Water Services, onde desenvolvo e mantenho
-              soluções de software que impactam diretamente o negócio. Tenho interesse profundo em
-              design de sistemas, boas práticas de engenharia e aprendizado em IA.
+              Atualmente atuo na área de tecnologia em Water Services, onde
+              desenvolvo e mantenho soluções de software que impactam
+              diretamente o negócio. Tenho interesse profundo em design de
+              sistemas, boas práticas de engenharia e aprendizado em IA.
             </p>
             <p className="text-slate-400 leading-relaxed text-base">
-              Quando não estou programando, estou estudando arquitetura de software ou explorando
-              novas tecnologias para evoluir como engenheiro.
+              Quando não estou programando, estou estudando arquitetura de
+              software ou explorando novas tecnologias para evoluir como
+              engenheiro.
             </p>
 
             {/* Stats */}
@@ -65,8 +70,12 @@ export default function About() {
                   key={stat.label}
                   className="text-center p-3 rounded-lg bg-blue-500/5 border border-blue-500/10"
                 >
-                  <div className="font-mono text-2xl font-bold text-blue-400">{stat.value}</div>
-                  <div className="text-xs text-slate-500 mt-1">{stat.label}</div>
+                  <div className="font-mono text-2xl font-bold text-blue-400">
+                    {stat.value}
+                  </div>
+                  <div className="text-xs text-slate-500 mt-1">
+                    {stat.label}
+                  </div>
                 </div>
               ))}
             </div>
@@ -96,5 +105,5 @@ export default function About() {
         </div>
       </div>
     </section>
-  )
+  );
 }

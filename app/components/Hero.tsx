@@ -6,8 +6,8 @@ import { FiArrowDown } from 'react-icons/fi';
 const roles = [
   'Software Engineer',
   'Full Stack Developer',
-  'Backend Specialist',
-  'Systems Architect',
+  'Solution Creator',
+  'Tech Enthusiast',
 ];
 
 function useTypewriter(words: string[], speed = 80, pause = 2000) {
